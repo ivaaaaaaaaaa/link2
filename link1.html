@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stilizacija HTML dokumenta</title>
+    <style>
+        /* Stilizacija linkova koji vode ka Google adresama */
+a[href^="https://www.google.com"] {
+    color: green;
+}
+
+/* Stilizacija linka koji vodi ka LINK group web sajtu */
+a[href="https://www.link-group.eu/"] {
+    color: red;
+}
+
+/* Naizmenično bojenje paragrafa unutar second-div elementa */
+.second-div p:nth-of-type(odd) {
+    color: red;
+}
+
+.second-div p:nth-of-type(even) {
+    color: blue;
+}
+
+/* Dodavanje teksta "NEW" na krajeve Paragrafa 2 i Paragrafa 3 */
+.second-div p:nth-child(2)::after,
+.second-div p:nth-child(3)::after {
+    content: " NEW";
+    color: yellow;
+}
+
+/* Italics na prelasku miša preko Paragraph 10 elementa */
+.second-div #par10:hover {
+    font-style: italic;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Main Heading</h1>
+    <p>Paragraph 1</p>
+
+    <!-- Google Doodles Goto Link Group -->
+    <a href="https://www.google.com">Google</a> 
+    <a href="https://www.google.com/doodles">Google Doodles</a>  
+    <a href="https://www.link-group.eu/">Go to Link Group</a>
+
+    <div class="second-div">
+        <h2>Subheading</h2>
+        <p id="par2">Paragraph 2</p>
+        <p id="par3">Paragraph 3</p>
+        
+        <h3>Sub subheading</h3>
+        <p>Paragraph 4</p>
+        <p>Paragraph 5</p>
+        <p>Paragraph 6</p>
+        <p>Paragraph 7</p>
+        <p>Paragraph 8</p>
+        <p>Paragraph 9</p>
+        <p id="par10">Paragraph 10</p>
+    </div>
+</body>
+</html>
